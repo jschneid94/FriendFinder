@@ -2,8 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 
+// Creates an instance of express
 var app = express();
-
+// Sets the initial port
 var PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));
