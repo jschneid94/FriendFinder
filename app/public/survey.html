@@ -16,25 +16,27 @@
     </head>
 
     <body>
-        <div class="jumbotron">
-            <div>
+        <div class="container">
+            <div class="row">
                 <h1>Survey Questions</h1>
             </div>
             <hr>
-            <div>
+            <div class="row">
                 <h2>About You:</h2>
-                <form>
-                    Name (Required) <br>
-                    <input type="text" name="name">
-                </form>
-                <form>
-                    Link to Photo Image (Required) <br>
-                    <input type="text" name="name">
+                <form class="col s12">
+                    <div class="row input-field">
+                        <input id="name" type="text" class="validate">
+                        <label for="name">Your Name (Required)</label>
+                    </div>
+                    <div class="row input-field">
+                        <input id="name" type="text" class="validate">
+                        <label for="name">Link to Photo Image (Required)</label>
+                    </div>
                 </form>
             </div>
             <hr>
             <!-- Survey Prompts -->
-            <div>
+            <form class="row">
                 <!-- Question 1 -->
                 <div class="input-field col s12">
                     <select>
@@ -135,10 +137,19 @@
                     </select>
                     <label>Materialize Select</label>
                 </div>
-            </div>
+            </form>
         </div>
 
-        <footer class="footer"></footer>
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <a class="waves-effect waves-light" href="#">API Friends List</a>
+                        <a class="waves-effect waves-light" href="#">Github Repo</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         <!--JavaScript at end of body for optimized loading-->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
