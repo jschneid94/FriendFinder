@@ -19,6 +19,10 @@ module.exports = function(app) {
         var userResponses = userInput.scores;
         console.log("Responses = " + userResponses);
 
+        var matchName = "";
+        var matchPhoto = "";
+        var totalDifference = 1000;
+
         for (var i = 0; i < friends.length; i++) {
             // Compute differences for each question
             var diff = 0;
@@ -26,9 +30,14 @@ module.exports = function(app) {
                 diff += Math.abs(friends[i].scores[j] - userResponses[j]);
             }
             console.log("diff = " + diff);
-        }
 
-        friends.push(req.body);
+            if (diff < totalDifference) {
+                totalDifference = diff;
+                matchName = friends[i].name;
+                matchPhoto = friends[i].photo;
+            }
+        }
+        friends.push(userInput);
         res.json(true);
     })
 };
