@@ -25,11 +25,11 @@
                 <h2>About You:</h2>
                 <form class="col s12">
                     <div class="row input-field">
-                        <input id="name" type="text" class="validate">
+                        <input id="userName" type="text" class="validate">
                         <label for="name">Your Name (Required)</label>
                     </div>
                     <div class="row input-field">
-                        <input id="name" type="text" class="validate">
+                        <input id="userPhoto" type="text" class="validate">
                         <label for="name">Link to Photo Image (Required)</label>
                     </div>
                 </form>
@@ -39,7 +39,7 @@
             <form class="row">
                 <!-- Question 1 -->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="question1">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -51,7 +51,7 @@
                 </div>
                 <!-- Question 2 -->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="question2">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -63,7 +63,7 @@
                 </div>
                 <!-- Question 3 -->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="question3">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -75,7 +75,7 @@
                 </div>
                 <!-- Question 4 -->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="question4">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -87,7 +87,7 @@
                 </div>
                 <!-- Question 5 -->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="question5">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -99,7 +99,7 @@
                 </div>
                 <!-- Question 6 -->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="question6">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -111,7 +111,7 @@
                 </div>
                 <!-- Question 7 -->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="question7">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -123,7 +123,7 @@
                 </div>
                 <!-- Question 8 -->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="question8">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -135,7 +135,7 @@
                 </div>
                 <!-- Question 9 -->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="question9">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -147,7 +147,7 @@
                 </div>
                 <!-- Question 10 -->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="question10">
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -158,7 +158,7 @@
                     <label>Materialize Select</label>
                 </div>
             </form>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light" type="submit" name="action" id="submitButton">Submit
                 <i class="material-icons right">send</i>
             </button>
         </div>
@@ -180,5 +180,29 @@
                 crossorigin="anonymous">
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <!-- My Javascript -->
+        <script>
+            $("#submitButton").on("click", function(event) {
+                event.preventDefault();
+
+                var userInput = {
+                    name: $("#userName").val().trim(),
+                    photo: $("#userPhoto").val().trim(),
+                    scores:[
+                        $("#question1").val().trim(),
+                        $("#question2").val().trim(),
+                        $("#question3").val().trim(),
+                        $("#question4").val().trim(),
+                        $("#question5").val().trim(),
+                        $("#question6").val().trim(),
+                        $("#question7").val().trim(),
+                        $("#question8").val().trim(),
+                        $("#question9").val().trim(),
+                        $("#question10").val().trim()
+                    ]
+                };
+            })
+        </script>
     </body>
 </html>
