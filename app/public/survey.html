@@ -190,8 +190,8 @@
             <div class="modal-content">
                 <h4>Your Match</h4>
                 <div class="divider"></div>
-                <h5 id="userMatch"></h5>
-                <img id="userPhoto" class="materialboxed" width="650" src="">
+                <h5 id="matchName"></h5>
+                <img id="matchPhoto" class="materialboxed" width="650" src="">
             </div>
         </div>
 
@@ -206,6 +206,7 @@
         <script>
             $(document).ready(function(){
                 $('select').formSelect();
+
             });
 
             $("#submitButton").on("click", function(event) {
@@ -230,6 +231,11 @@
 
                 $.post("/api/friends", userInput).done(function(data) {
                     console.log("response: " + JSON.stringify(data));
+
+                    $("#matchName").html(data.matchName);
+                    $("#matchPhoto").attr("src", data.matchPhoto);
+
+                    $("#modal1").modal("open");
                 });
             });
         </script>
