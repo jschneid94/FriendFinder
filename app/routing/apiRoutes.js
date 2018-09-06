@@ -1,6 +1,6 @@
 const path = require("path");
 
-const friends = require("../data/friends");
+const friends = require("../data/friends.js");
 
 module.exports = function(app) {
 
@@ -39,5 +39,5 @@ module.exports = function(app) {
         }
         friends.push(userInput);
         res.json({status: "OK", matchName: matchName, matchPhoto: matchPhoto});
-    })
+    });
 };
