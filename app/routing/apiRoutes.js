@@ -38,6 +38,6 @@ module.exports = function(app) {
             }
         }
         friends.push(userInput);
-        res.json(true);
+        res.json({status: "OK", matchName: matchName, matchPhoto: matchPhoto});
     })
 };
