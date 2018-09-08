@@ -29,7 +29,7 @@ module.exports = function(app) {
             for (var j = 0; j < userResponses.length; j++) {
                 diff += Math.abs(friends[i].scores[j] - userResponses[j]);
             }
-            console.log("diff = " + diff);
+            // console.log("diff = " + diff);
 
             if (diff < totalDifference) {
                 totalDifference = diff;
