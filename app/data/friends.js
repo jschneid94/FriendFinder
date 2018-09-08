@@ -1,5 +1,21 @@
 var friendsArray = [
     {
+        "name":"Jonathan Van Ness",
+        "photo":"../public/images/jvn.jpg",
+        "scores":[
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    },
+    {
         "name":"Ahmed",
         "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
         "scores":[

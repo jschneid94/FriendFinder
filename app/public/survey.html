@@ -193,6 +193,9 @@
                 <h5 id="matchName"></h5>
                 <img id="matchPhoto" class="materialboxed" width="650" src="">
             </div>
+            <div class="modal-footer">
+                <a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">Fill Again!</a>
+            </div>
         </div>
 
         <!--JavaScript at end of body for optimized loading-->
@@ -203,10 +206,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
         <!-- My Javascript -->
-        <script>
+        <script type="text/javascript">
             $(document).ready(function(){
                 $('select').formSelect();
 
+                $(".modal").modal({
+                    dismissable: false
+                });
             });
 
             $("#submitButton").on("click", function(event) {
