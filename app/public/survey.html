@@ -17,6 +17,7 @@
     </head>
 
     <body>
+        <!-- Header -->
         <header>
             <nav>
                 <div class="nav-wrapper valign-wrapper blue darken-2">
@@ -27,7 +28,7 @@
                 </div>
             </nav>
         </header>
-
+        <!-- Body -->
         <main>
             <div class="container">
                 <div class="row">
@@ -186,18 +187,21 @@
                 </button>
             </div>
         </main>
-
-        <footer class="page-footer">
+        <!-- Footer -->
+        <footer class="page-footer blue darken-2">
             <div class="container">
                 <div class="row">
-                    <div class="col l6 s12">
-                        <a class="waves-effect waves-light" href="#">API Friends List</a>
-                        <a class="waves-effect waves-light" href="#">Github Repo</a>
+                    <div class="col s12">
+                        <h5>Links</h5>
+                        <ul>
+                            <li><a class="waves-effect waves-light" href="#">API Friends List</a></li>
+                            <li><a class="waves-effect waves-light" href="#">Github Repo</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </footer>
-
+        <!-- Modal -->
         <div class="modal" id="modal1">
             <div class="modal-content">
                 <h4>Your Match</h4>
@@ -216,20 +220,19 @@
                 crossorigin="anonymous">
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
         <!-- My Javascript -->
         <script type="text/javascript">
+            // Enable form input and the modal
             $(document).ready(function(){
                 $('select').formSelect();
-
                 $(".modal").modal({
                     dismissable: false
                 });
             });
-
+            // When submit is pressed...
             $("#submitButton").on("click", function(event) {
                 event.preventDefault();
-
+                // Grab the user's input values and assign them to an object
                 var userInput = {
                     name: $("#userName").val().trim(),
                     photo: $("#userPhoto").val().trim(),
@@ -246,7 +249,7 @@
                         $("#question10").val().trim()
                     ]
                 };
-
+                // Post the input to friends.js and return the friend match in the modal
                 $.post("/api/friends", userInput).done(function(data) {
                     console.log("response: " + JSON.stringify(data));
 
