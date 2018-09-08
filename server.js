@@ -7,6 +7,8 @@ var app = express();
 // Sets the initial port
 var PORT = process.env.PORT || 8080;
 
+app.use(express.static("app/public"));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.text());
