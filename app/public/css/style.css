@@ -26,3 +26,9 @@ nav {
 #logo-icon {
     font-size: 4rem;
 }
+
+#matchPhoto {
+    margin: 0 auto;
+    height: 220px;
+    width: auto;
+}
