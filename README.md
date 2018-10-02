@@ -1,6 +1,6 @@
 # FriendFinder
-![Home Screen](app/images/screenshot1.PNG)
-![Survey Result](app/images/screenshot2.PNG)
+![Home Screen](/app/public/images/screenshot1.PNG)
+![Survey Result](app/public/images/screenshot2.PNG)
 
 ## Description
 
